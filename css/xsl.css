@@ -1,0 +1,8 @@
+tr.error { color:red; }
+tr.warning{ color:orange; }
+tr.info{ color:green; }
+
+img.icon { float:left; padding-right:10px;}
+div.level1 {margin-left: 20px;}
+div.level2 {margin-left: 40px;}
+div.level3 {margin-left: 60px;}
