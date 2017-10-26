@@ -28,6 +28,26 @@
 						</xsl:for-each>
 					</div>
 				</details>
+		                <xsl:if test="./Exception">body node exists
+					<details open="open">
+						<summary><img src="images/exception.png" class="icon" />Exceptions</summary>
+						<div class="level3">
+							<xsl:for-each select="./Exception">
+								<xsl:choose>
+									<xsl:when test="@type='HASH'">
+										<img src="images/hash.png" class="icon" /><strong>Source: </strong><xsl:value-of select="./@sourceFile" /><strong> Size: </strong><xsl:value-of select="./@size" /><strong> Hash: </strong><xsl:value-of select="./@SHA256Authenticode" /><br />
+									</xsl:when>
+									<xsl:when test="@type='PUBLISHER'">
+										<img src="images/publisher.png" class="icon" /><strong>Publisher: </strong><xsl:value-of select="./@publisher" /><strong> Binary: </strong><xsl:value-of select="./@binary" /><strong> Product: </strong><xsl:value-of select="./@product" /><br />
+									</xsl:when>
+									<xsl:when test="@type='PATH'">
+										<img src="images/path.png" class="icon" /><strong>Path: </strong><xsl:value-of select="./@path" /><br />
+									</xsl:when>
+								</xsl:choose>
+							</xsl:for-each>
+						</div>
+					</details>
+				</xsl:if>
 			</div>
         </details>
         <br />
